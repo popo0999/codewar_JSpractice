@@ -27,55 +27,57 @@ printer_error(s) => "8/22"
 // My solution:
 
 function printerError(s) {
+  //   let ar1 = s.split(' ')
   let ar = s.split("");
+  //   console.log(ar1)
   let all = 0;
   let count = 0;
-  console.log(s);
 
   for (let i = 0; i < ar.length; i++) {
     all += 1;
-  }
-  if (ar.includes("n")) {
-    count += 1;
-  }
-  if (ar.includes("o")) {
-    count += 1;
-  }
-  if (ar.includes("p")) {
-    count += 1;
-  }
-  if (ar.includes("q")) {
-    count += 1;
-  }
-  if (ar.includes("r")) {
-    count += 1;
-  }
-  if (ar.includes("s")) {
-    count += 1;
-  }
-  if (ar.includes("t")) {
-    count += 1;
-  }
-  if (ar.includes("u")) {
-    count += 1;
-  }
-  if (ar.includes("v")) {
-    count += 1;
-  }
-  if (ar.includes("w")) {
-    count += 1;
-  }
-  if (ar.includes("x")) {
-    count += 1;
-  }
-  if (ar.includes("y")) {
-    count += 1;
-  }
-  if (ar.includes("z")) {
-    count += 1;
+    if (ar[i] == "n") {
+      count += 1;
+    }
+    if (ar[i] == "o") {
+      count += 1;
+    }
+    if (ar[i] == "p") {
+      count += 1;
+    }
+    if (ar[i] == "q") {
+      count += 1;
+    }
+    if (ar[i] == "r") {
+      count += 1;
+    }
+    if (ar[i] == "s") {
+      count += 1;
+    }
+    if (ar[i] == "t") {
+      count += 1;
+    }
+    if (ar[i] == "u") {
+      count += 1;
+    }
+    if (ar[i] == "v") {
+      count += 1;
+    }
+    if (ar[i] == "w") {
+      count += 1;
+    }
+    if (ar[i] == "x") {
+      count += 1;
+    }
+    if (ar[i] == "y") {
+      count += 1;
+    }
+    if (ar[i] == "z") {
+      count += 1;
+    }
   }
 
   //   console.log()
+  console.log(s);
   let ans = count + "/" + all;
   return ans;
 }

@@ -24,10 +24,8 @@ function findOdd(ar) {
     for (let j = 0; j < ar.length; j++) {
       if (ar[i] == ar[j]) {
         count += 1;
-        //         console.log('1@@@',ar.pop())
       }
     }
-    console.log(ar[i], count);
     if (count % 2 == 1) {
       return ar[i];
     }
