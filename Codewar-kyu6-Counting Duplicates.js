@@ -19,22 +19,25 @@ Example
 
 // My solution:
 function duplicateCount(text) {
-  let ar = text.toLowerCase().split("");
-  let newAr = [];
-  for (let i = 0; i < ar.length; i++) {
-    for (let j = i + 1; j < ar.length; j++) {
-      if (ar[i] == ar[j]) {
-        newAr.push(ar[i]);
-      }
-    }
-  }
-  let count = 0;
-  console.log(newAr);
-  for (let i1 = 0; i1 < newAr.length; i1++) {
-    for (let j1 = i1 + 1; j1 < newAr.length; j1++) {
-      if (newAr[i1] != newAr[j1]) {
-        count += 1;
-      }
-    }
-  }
+	let x = text.toLowerCase().split("").sort();
+	let count = 0;
+	for (let i = 0; i < x.length; i++) {
+		for (let j = i + 1; j < x.length; j++) {
+			if (x[i] == x[j] && x[i] != x[j - 2]) count++;
+		}
+	}
+	return count;
+}
+
+// arrow + forEach
+function duplicateCount(text) {
+	let count = 0;
+	text
+		.toLowerCase()
+		.split("")
+		.sort()
+		.forEach((v, k, el) => {
+			if (v == el[k + 1] && v != el[k - 1]) count++;
+		});
+	return count;
 }
