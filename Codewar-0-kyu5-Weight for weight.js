@@ -33,21 +33,45 @@ For C: The result is freed.
 // My solution:
 function orderWeight(s) {
     let ar = s.split(' ')
-    console.log(ar)
     let newAr = [];
+    console.log(ar)
     for (let i = 0; i < ar.length; i++) {
-        
+        let num = 0;
+        for (let j = 0; j < ar[i].length; j++) {
+            num += +ar[i][j]
+        }
+        newAr.push(num)
     }
-    console.log('newAr',newAr)
+    console.log('first newAr', newAr)
+    let ansAr = [];
+
+    for (let i = 0; i < newAr.length; i++) {
+        let count = 0;
+        for (let j = 0; j < newAr.length; j++) {
+            if (newAr[i] > newAr[j]) {
+                ansAr.push(ar[j])
+                count++
+                newAr.splice(j, 1,9999999999999)
+                break;
+            }
+        }
+        console.log('newAr',newAr)
+        if (count == 0) {
+            ansAr.push(ar[i])
+            newAr.splice(i, 1,9999999999999)
+        }
+    }
+    console.log('ansAr', ansAr)
 }
 
 let a1 = orderWeight("103 123 4444 99 2000")
 // "2000 103 123 4444 99")
 let a2 = orderWeight("2000 10003 1234000 44444444 9999 11 11 22 123") //"11 11 2000 10003 22 123 1234000 44444444 9999"
+let a3 = orderWeight("56 65 74 100 99 68 86 180 90") //"100 180 90 56 65 74 68 86 99"
 
 console.log(a1);
 console.log(a2);
-// console.log(a3);
+console.log(a3);
 // console.log(a4);
 // console.log(a5);
 // console.log(a6)

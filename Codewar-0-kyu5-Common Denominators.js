@@ -51,8 +51,8 @@ function convertFrac(lst) {
         let max = lsr[i][1]
     }
     let count = 0;
-    for(let k = ; k<ar.length; k--){
-        if()
+    for(let k = 0; k<ar.length; k--){
+        
     }
     for(let l = max; l>0; l--){
         

@@ -23,17 +23,16 @@ perimeter(7)  should return 216
 */
 
 // My solution:
+
 function perimeter(n) {
-    let num = 0;
-    let ar = [];
-    for (let i = 0; i < n+1; i++) {
-        ar.push()
+    // let num = 0;
+    let ar = [0, 1];
+    for (let i = 2; i <= n + 1; i++) {
+        ar[i] = parseInt(ar[i - 2]) + parseInt(ar[i - 1])
     }
+    return 4 * (ar.reduce((a, b) => a + b))
 }
 
-function arr(n) {
-
-}
 
 let a1 = perimeter(0) // 4
 let a2 = perimeter(5) // 80
