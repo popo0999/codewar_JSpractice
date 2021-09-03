@@ -1,4 +1,5 @@
 // Weight for weight
+// Not success
 
 
 
@@ -51,14 +52,16 @@ function orderWeight(s) {
             if (newAr[i] > newAr[j]) {
                 ansAr.push(ar[j])
                 count++
-                newAr.splice(j, 1,9999999999999)
+                newAr.splice(j, 1,'9999999999999999999')
                 break;
+                // i--
             }
         }
-        console.log('newAr',newAr)
+        // console.log('newAr',newAr)
         if (count == 0) {
             ansAr.push(ar[i])
-            newAr.splice(i, 1,9999999999999)
+            newAr.splice(i, 1,'9999999999999999999')
+
         }
     }
     console.log('ansAr', ansAr)
