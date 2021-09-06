@@ -1,5 +1,4 @@
 // Simple Pig Latin
-// Not success
 
 
 
