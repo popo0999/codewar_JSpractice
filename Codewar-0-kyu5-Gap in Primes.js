@@ -51,13 +51,16 @@ function gap(g, m, n) {
     let nowNum = 0;
     for (let i = m; i <= n; i++) {
         let count = 0;
-        for (let j = 2; j <= i; j++) {
+        // 找質數關鍵！！！！！不需要檢查全部的數字，只需要檢查開根後的數字範圍的就好哩
+        // 例如：100，只需要檢查10以內就好了
+        let max = Math.floor(Math.sqrt(i));
+        for (let j = 1; j <= max; j++) {
             // 如果可以被整除，則count++
             if (i % j == 0) {
                 count++
             }
             if (count > 1) {
-                // 質數只會被1(沒有跑迴圈)跟自己整除，故count>1時，就不是質數，故break
+                // 質數只會被1跟自己(不會跑到自己)整除，故count>1時，就不是質數，則break
                 break
             }
             // console.log('i',i,count);
@@ -67,6 +70,7 @@ function gap(g, m, n) {
 
         // 符合以下條件，i就是質數
         if (count == 1) {
+            // console.log('count===1 i',i);
             // 去檢查是否有符合條件==g
             if (i - nowNum == g) {
                 return [nowNum, i]
@@ -92,29 +96,3 @@ console.log(a3);
 console.log(a4);
 console.log(a5);
 // console.log(a6)
-
-
-
-// 待嘗試
-/*
-let numCount = 0;
-let ar = [];
-for (let i = 2; i <= n; i++) {
-    for (let j = 1; j <= i; j++) {
-        // 如果可以被整除，則numCount++
-        if (i % j == 0) {
-            numCount++
-        }
-        // 質數只會被1跟自己整除，故numCount>2時，就不是質數，故break
-        if (numCount > 2) {
-            break
-        }
-
-        // 符合以下條件，i就是質數
-        if (numCount == 2 && i == j) {
-            ar.push(i)
-        }
-    }
-}
-
-*/

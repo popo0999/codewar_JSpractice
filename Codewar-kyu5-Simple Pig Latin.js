@@ -31,7 +31,6 @@ function pigIt(str) {
     }
     newAr.splice(-1, 1)
     return (newAr.join(''));
-
 }
 
 
