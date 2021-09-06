@@ -1,5 +1,4 @@
 // Gap in Primes
-// Not success
 
 
 
