@@ -1,7 +1,5 @@
 // Gap in Primes
 
-
-
 /* 
 
 Description:
@@ -47,46 +45,44 @@ For Go: nil slice is expected when there are no gap between m and n. Example: ga
 
 // My solution:
 function gap(g, m, n) {
-    let nowNum = 0;
-    for (let i = m; i <= n; i++) {
-        let count = 0;
-        // 找質數關鍵！！！！！不需要檢查全部的數字，只需要檢查開根後的數字範圍的就好哩
-        // 例如：100，只需要檢查10以內就好了
-        let max = Math.floor(Math.sqrt(i));
-        for (let j = 1; j <= max; j++) {
-            // 如果可以被整除，則count++
-            if (i % j == 0) {
-                count++
-            }
-            if (count > 1) {
-                // 質數只會被1跟自己(不會跑到自己)整除，故count>1時，就不是質數，則break
-                break
-            }
-            // console.log('i',i,count);
-        }
-        // console.log('nowNum',nowNum)
-        // console.log('out',i);
+	let nowNum = 0;
+	for (let i = m; i <= n; i++) {
+		let count = 0;
+		// 找質數關鍵！！！！！不需要檢查全部的數字，只需要檢查開根後的數字範圍的就好哩
+		// 例如：100，只需要檢查10以內就好了
+		let max = Math.floor(Math.sqrt(i));
+		for (let j = 1; j <= max; j++) {
+			// 如果可以被整除，則count++
+			if (i % j == 0) {
+				count++;
+			}
+			if (count > 1) {
+				// 質數只會被1跟自己(不會跑到自己)整除，故count>1時，就不是質數，則break
+				break;
+			}
+			// console.log('i',i,count);
+		}
+		// console.log('nowNum',nowNum)
+		// console.log('out',i);
 
-        // 符合以下條件，i就是質數
-        if (count == 1) {
-            // console.log('count===1 i',i);
-            // 去檢查是否有符合條件==g
-            if (i - nowNum == g) {
-                return [nowNum, i]
-            }
-            nowNum = i
-        }
-
-    }
-    return null
+		// 符合以下條件，i就是質數
+		if (count == 1) {
+			// console.log('count===1 i',i);
+			// 去檢查是否有符合條件==g
+			if (i - nowNum == g) {
+				return [nowNum, i];
+			}
+			nowNum = i;
+		}
+	}
+	return null;
 }
 
-
-let a1 = gap(2, 100, 110) // [101, 103]);
-let a2 = gap(4, 100, 110) // [103, 107]);
-let a3 = gap(6, 100, 110) // null);
-let a4 = gap(8, 300, 400) // [359, 367]);
-let a5 = gap(10, 300, 400) // [337, 347]);
+let a1 = gap(2, 100, 110); // [101, 103]);
+let a2 = gap(4, 100, 110); // [103, 107]);
+let a3 = gap(6, 100, 110); // null);
+let a4 = gap(8, 300, 400); // [359, 367]);
+let a5 = gap(10, 300, 400); // [337, 347]);
 // let a6 = solequa(90005)
 
 console.log(a1);
