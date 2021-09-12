@@ -40,17 +40,25 @@ function primeFactors(n) {
 				ar.unshift(`(${i}**${backCount})`);
 			}
 
-			let x = n / i;
-			if (x > sqrtMax && x % 2 != 0 && x % 3 != 0) {
-				for (let m = 2; m < x; m++) {
-					if (x % m == 0) {
-						break;
-					}
-				}
-				ar.push(`(${x})`);
-			}
+			// let x = n / i;
+			// for (let j = 2; j < i - 1; j++) {
+			// 	if (i % j === 0) {
+			// 		count++;
+			// 		break;
+			// 	}
+			// }
+
+			// if (x > sqrtMax && x % 2 != 0 && x % 3 != 0) {
+			// 	for (let m = 2; m < x; m++) {
+			// 		if (x % m == 0) {
+			// 			break;
+			// 		}
+			// 	}
+			// 	ar.push(`(${x})`);
+			// }
 			// console.log('ar', ar);
 		}
+		n = n / i;
 	}
 	return ar.join('');
 }
