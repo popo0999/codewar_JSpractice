@@ -1,6 +1,4 @@
 // Greed is Good
-// Not success
-
 /* 
 
 Description:
@@ -30,13 +28,11 @@ In some languages, it is possible to mutate the input to the function. This is s
 // My solution:
 function score(dice) {
 	let ar = dice.sort();
-	console.log('ar', ar);
 	// console.log(ar[0] === ar[2]);
 	let s = 0;
 	for (let i = 0; i < ar.length; i++) {
 		if (ar[i] === ar[i + 2]) {
 			if (ar[i] == 2) {
-				console.log('this is 2');
 				s += 200;
 				ar[i] = ar[i + 1] = ar[i + 2] = 9;
 			}
