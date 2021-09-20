@@ -1,5 +1,4 @@
 // Did I Finish my Sudoku?
-// Not success
 
 /* 
 
